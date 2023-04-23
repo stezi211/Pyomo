@@ -1,0 +1,37 @@
+#Set I: Set of incinerators
+#Param Incineration_Cost: Unit cost of each incinerator
+#Param Incineration_Capacity: Capacity of each incinerator 
+param: I :Incineration_Cost Incineration_Capacity:=
+1 40 500
+2 30 500;
+
+#Set L: Set of landfills
+#Param Landfill_Capacity: Capacity of each landfill
+param: L : Landfill_Capacity:=
+I 200
+II 200;
+
+#Set C: Set of cities
+#Param Wastage: Wastage produced by each city
+param: C : Wastage:=
+A 500
+B 400;
+
+#Param Distances_to_I: Distances between incinerator in I and city in C or landfill in L
+param: Distances_to_I :=
+1 A 30
+2 A  5
+1 B 36
+2 B 42
+1 I 5
+1 II 8
+2 I 9
+2 II 6;
+
+#percentage of waste volume reduction after incineration
+param ReduceWasteToDebris := 0.2;
+
+#unit transportation cost 
+param TransportationCost := 3;
+
+#Optimal value of the instance: 84700
